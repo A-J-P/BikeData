@@ -1,6 +1,4 @@
 
-
-
 *Read Data into R*
 
 ```{r}
@@ -12,4 +10,8 @@ BikeData <- read.csv("~/UTexasDA/BikeData/BikeData.csv")
 summary(BikeData)
 ```
 
-.
+
+*First few Data Data*
+```{r BikeData}
+head(BikeData)
+```
