@@ -1,0 +1,12 @@
+*Read Data into R*
+
+```{r}
+BikeData <- read.csv("~/UTexasDA/BikeData/BikeData.csv")
+```
+
+*Summary of the Data*
+```{r BikeData}
+summary(BikeData)
+```
+
+.
