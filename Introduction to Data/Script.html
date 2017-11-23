@@ -121,32 +121,21 @@ $(document).ready(function () {
 </div>
 
 
+<table>
+<tbody>
+<tr class="odd">
+<td align="right">title: “Analyzing BikeData Set”</td>
+</tr>
+<tr class="even">
+<td align="right">output: github_document</td>
+</tr>
+</tbody>
+</table>
 <p><em>Read Data into R</em></p>
-<pre class="r"><code>BikeData &lt;- read.csv(&quot;~/UTexasDA/BikeData/BikeData.csv&quot;)</code></pre>
-<p><em>Summary of the Data</em></p>
-<pre class="r"><code>summary(BikeData)</code></pre>
-<pre><code>##     user_id         age        gender    student          employed     
-##  Min.   :  1   Min.   :22.00   F:31   Min.   :0.0000   Min.   :0.0000  
-##  1st Qu.: 31   1st Qu.:29.00   M:90   1st Qu.:0.0000   1st Qu.:1.0000  
-##  Median : 61   Median :36.00          Median :0.0000   Median :1.0000  
-##  Mean   : 61   Mean   :36.45          Mean   :0.1157   Mean   :0.9008  
-##  3rd Qu.: 91   3rd Qu.:42.00          3rd Qu.:0.0000   3rd Qu.:1.0000  
-##  Max.   :121   Max.   :63.00          Max.   :1.0000   Max.   :1.0000  
-##                     cyc_freq     distance           time      
-##  Daily                  :47   Min.   : 0.520   Min.   : 3.00  
-##  Less than once a month : 2   1st Qu.: 3.220   1st Qu.:15.00  
-##  Several times per month:14   Median : 5.590   Median :24.00  
-##  Several times per week :58   Mean   : 5.991   Mean   :25.73  
-##                               3rd Qu.: 8.310   3rd Qu.:37.00  
-##                               Max.   :13.950   Max.   :55.00  
-##      speed      
-##  Min.   : 4.29  
-##  1st Qu.:11.87  
-##  Median :13.60  
-##  Mean   :14.05  
-##  3rd Qu.:15.65  
-##  Max.   :30.84</code></pre>
-<p>.</p>
+<pre class="{r}"><code>BikeData &lt;- read.csv(&quot;~/UTexasDA/BikeData/BikeData.csv&quot;)</code></pre>
+<p><em>Summary of the Data</em> <code>{r BikeData} summary(BikeData)</code></p>
+<p><em>First few Data</em></p>
+<pre class="{r}"><code>head(BikeData)</code></pre>
 
 
 

@@ -1,7 +1,5 @@
   ---  
     title: "Analyzing BikeData Set"  
-    author: "Jenny Bryan"  
-    date: "`r format(Sys.Date())`"
     output: github_document
   ---  
 
@@ -21,3 +19,4 @@ summary(BikeData)
 ```{r}
 head(BikeData)
 ```
+
