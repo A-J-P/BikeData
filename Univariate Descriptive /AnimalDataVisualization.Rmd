@@ -2,9 +2,7 @@
       output: github_document
   ---  
 
-*Read Data into R*
-
-```{r}
+```{r AnimalData}
 Animal<-read.csv("~/UTexasDA/BikeData/AnimalData.csv")
 View(Animal)
 
@@ -12,22 +10,70 @@ View(Animal)
 head(Animal)
 
 #Summary of the Data
-  
-```{r AnimalData}
-summary(AnimalData)
-```
+summary(Animal)
 
+#animal-Sexplot
+plot(Animal$Sex, xlab = "Sex", ylab= "Number")
 
-```{r cars}
-summary(cars)
-```
+#animal-Gender plot
+plot(Animal$Sex, main="Gender Plot", xlab = "Gender", ylab= "Frequency")
 
-## Including Plots
+#Histogram Age.Intake
+hist(Animal$Age.Intake, main = "Animal Age At Intake", xlab="Age @ Intake")
 
-You can also embed plots, for example:
+#Data for Male
+Male<-Animal[Animal$Sex == "Male",]
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+sum(is.na(Male))
+
+summary(Male)
+
+boxplot(Male$Max.Life.Expectancy)
+
+plot(Male$Max.Weight, Male$Max.Life.Expectancy, xlab="Weight", ylab="Life Expectancy", main="Life Expectancy vs Weight")
+
+#male ages at intake
+Maleage<-Animal$Age.Intake[Animal$Sex == "Male"]
+hist(Maleage, main = "Age of Males at intake", xlab = "Age at Intake", ylab= "Frequency")
+
+#Female ages at intake
+Femaleage<-Animal$Age.Intake[Animal$Sex == "Female"]
+hist(Maleage, main = "Age of Females at intake", xlab = "Age at Intake", ylab= "Frequency", breaks=20)
+
+max(Maleage)
+max(Femaleage)
+
+which(Animal$Age.Intake == 17)
+Animal[415,]
+
+#total # adopted
+AnimalAdopted<-Animal[Animal$Outcome.Type == "Adoption",]
+
+#length of time in shelter
+inshelter<-AnimalAdopted$Days.Shelter
+
+hist(inshelter)
+sd(inshelter)
+mean(inshelter)
+median(inshelter)
+fivenum(inshelter)
+boxplot(inshelter)
+
+#animal that is outlier
+which(Animal$Days.Shelter == 211)
+
+#Discriptive Statistics
+
+mean(Animal$Age.Intake)
+median(Animal$Age.Intake)
+sd(Animal$Age.Intake)
+fivenum(Animal$Age.Intake)
+boxplot(Animal$Age.Intake)
+
+mean(Animal$Weight)
+median(Animal$Weight)
+sd(Animal$Weight)
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

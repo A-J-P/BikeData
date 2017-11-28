@@ -6,3 +6,4 @@ All the data for analysis came from the class.
 ## **Table of Content**
 
 1.Introduction to Data
+2. Univariate Discriptive
