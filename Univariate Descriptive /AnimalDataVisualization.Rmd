@@ -1,6 +1,3 @@
- ---  
-      output: github_document
-  ---  
 
 ```{r AnimalData}
 Animal<-read.csv("~/UTexasDA/BikeData/AnimalData.csv")
@@ -76,4 +73,3 @@ sd(Animal$Weight)
 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
