@@ -1,0 +1,56 @@
+---
+title: "Bivariate Data"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+
+```{r Bullriders}
+bull<-read.csv("~/UTexasDA/BikeData/Bivariate/BullRiders.csv")
+
+View(bull)
+
+```
+
+
+```{r pressure, echo=TRUE}
+plot(bull$YearsPro,bull$BuckOuts14, xlab="years pro",ylab="buckouts", main="plot of years pro vs buckouts", col=c("red","green"))
+
+plot(bull$YearsPro,bull$BuckOuts14, xlab="years pro",ylab="buckouts", main="plot of years pro vs buckouts", col=c("red","green"))
+
+abline(lm(bull$BuckOuts14~bull$YearsPro))
+
+plot(bull$Events12, bull$BuckOuts12,xlab="no.of events", ylab="buckouts", main="no.of event vs buckouts", col="red")
+
+abline(lm(bull$BuckOuts12~bull$Events12))
+
+cor(bull$YearsPro, bull$BuckOuts12)
+
+cor(bull$Events12, bull$BuckOuts12)
+
+varcorr<-c('YearsPro','Events12','BuckOuts12')
+cor(bull[,varcorr])
+
+new_bull<-bull[bull$Events12>0,]
+
+hist(new_bull$Rides12, col="red")
+fivenum(new_bull$Rides12)
+mean(new_bull$Rides12)
+median(new_bull$Rides12)
+sd(new_bull$Rides12)
+
+plot(new_bull$Rides12, new_bull$Top10_12, , ylab="top ten riders", xlab="riders",  col="red")
+abline(lm(new_bull$Top10_12~new_bull$Rides12))
+cor(new_bull$Rides12, new_bull$Top10_12)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

@@ -17,6 +17,7 @@ hist(Animal$Age.Intake, main = "Animal Age At Intake", xlab="Age @ Intake")
 
 #Data for Male
 Male<-Animal[Animal$Sex == "Male",]
+mean(Male$Age.Intake)
 
 sum(is.na(Male))
 
@@ -76,8 +77,18 @@ table(oldthanyear$Intake.Type)
 
 table(oldthanyear$Animal.Type)
 
+#distribution for adult dog
+hist(oldthanyear$Weight[oldthanyear$Animal.Type == "Dog"])
+
+#distribution for adult cat
+hist(oldthanyear$Weight[oldthanyear$Animal.Type == "Cat"])
+
+#mean and sd weight of adult cats
+mean(oldthanyear$Weight[oldthanyear$Animal.Type == "Cat"])
+sd(oldthanyear$Weight[oldthanyear$Animal.Type == "Cat"])
+
 #statistics
-hist(oldthanyear$Weight, breaks = 20)
+hist(oldthanyear$Weight)
 mean(oldthanyear$Weight)
 median(oldthanyear$Weight)
 sd(oldthanyear$Weight)
@@ -85,3 +96,23 @@ fivenum(oldthanyear$Weight)
 boxplot(oldthanyear$Weight)
 
 which(Animal$Weight == 18)
+
+Dogs<-Animal[Animal$Animal.Type == "Dog",]
+# proportion of dogs were brought to the shelter as an owner surrender
+sum(Dogs$Intake.Type == "Owner Surrender")
+owndersurrender<-(Dogs$Intake.Type == "Owner Surrender")
+sum(owndersurrender)
+
+#dogs that were returned to their owner that were brought to the shelter as an owner surrender
+returnedtoowner<-Dogs[Dogs$Intake.Type == "Owner Surrender",]
+toowner<-returnedtoowner$Outcome.Type[returnedtoowner$Intake.Type == "Owner Surrender"]
+summary(toowner)
+
+#mean number of days that the dogs spent at the shelter before being returned to their owner
+mean(returnedtoowner$Days.Shelter[returnedtoowner$Outcome.Type == "Return to Owner"])
+mean(Dogs$Days.Shelter[Dogs$Outcome.Type == "Return to Owner"])
+plot(Dogs$Intake.Type)
+
+pwd
+
+

@@ -1,5 +1,5 @@
 
-```{r AnimalData}
+```{r AnimalData, echo=TRUE}
 Animal<-read.csv("~/UTexasDA/BikeData/AnimalData.csv")
 View(Animal)
 
