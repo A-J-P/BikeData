@@ -1,7 +1,5 @@
 # **Background**
-UTexas, Data Analysis class Part 1, as taught in [Edx](http://edx.org)
-
-All the data for analysis came from the class. 
+UTexas, Data Analysis class Part 1
 
 ## **Table of Content**
 
