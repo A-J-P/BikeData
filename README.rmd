@@ -1,7 +1,7 @@
-Background
-UTexas, Data Analysis class Part 1
+# Background
+## UTexas, Data Analysis class Part 1
 
-Table of Content
+#### Table of Content
 
 1. Introduction to Data
 2. Univariate Discriptive
